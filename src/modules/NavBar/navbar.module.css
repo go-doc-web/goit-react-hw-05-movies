@@ -1,0 +1,32 @@
+.menu {
+  padding: 16px 15px;
+  background-color: beige;
+  -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.75);
+}
+
+.menu_list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu_link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+  padding: 10px 6px;
+}
+
+.menu_link:hover,
+.menu_link:focus {
+  color: teal;
+}
+.menu_link:global(.active) {
+  color: red;
+}
