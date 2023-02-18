@@ -12,6 +12,12 @@ const api = axios.create({
 
 export const getTrendMoviesToday = async () => {
   const { data } = await api.get(`/trending/movie/day`);
+
+  return data;
+};
+
+export const getMoviesById = async id => {
+  const { data } = await api.get(`/movie/${id}`);
   console.log(data);
   return data;
 };

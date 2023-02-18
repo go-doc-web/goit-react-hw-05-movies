@@ -4,6 +4,7 @@ import NavBar from 'modules/NavBar';
 import HomePage from './pages/HomePage';
 import MoviesPage from 'pages/MoviesPage';
 import NotFoundPage from 'pages/NotFoundPage';
+import SingleMoviePage from 'pages/SingleMoviePage/SingleMoviePage';
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movies:movieId" element={<p>Detalis</p>} />
+        <Route path="/movies/:id" element={<SingleMoviePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
