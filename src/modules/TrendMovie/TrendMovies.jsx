@@ -23,7 +23,13 @@ const TrendMovies = () => {
 
     fetchMoviesToday();
   }, [setItems, setLoading, setError]);
-  return <TrendMoviesList items={items} />;
+  return (
+    <>
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      <TrendMoviesList items={items} />
+    </>
+  );
 };
 
 export default TrendMovies;

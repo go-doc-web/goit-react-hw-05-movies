@@ -38,36 +38,40 @@ const MovieDetails = () => {
   const year = release_date ? release_date.substr(0, 4) : '';
 
   return (
-    <section className={css.section}>
-      <div className={css.wrapper}>
-        <div className={css.thumb}>
-          <img
-            src={poster_path ? baseImageUrl + poster_path : imagePlaceholder}
-            alt={title}
-            width={342}
-            height={487}
-          />
-        </div>
-        <div>
-          <h1 className={css.title}>
-            {title ? title : 'No Title'} <span>({year})</span>
-          </h1>
-          <p className={css.score}>
-            User Score: <span>{(vote_average * 10).toFixed(1)}%</span>
-          </p>
-          <div>
-            <h2 className={css.overview_title}>overview</h2>
-            <p className={css.overview__box}>
-              {overview ? overview : 'No overview'}
-            </p>
+    <>
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      <section className={css.section}>
+        <div className={css.wrapper}>
+          <div className={css.thumb}>
+            <img
+              src={poster_path ? baseImageUrl + poster_path : imagePlaceholder}
+              alt={title}
+              width={342}
+              height={487}
+            />
           </div>
-          <h3 className={css.genres}>Genres</h3>
-          <ul className={css.genres_list}>
-            <Genres items={genres} />
-          </ul>
+          <div>
+            <h1 className={css.title}>
+              {title ? title : 'No Title'} <span>({year})</span>
+            </h1>
+            <p className={css.score}>
+              User Score: <span>{(vote_average * 10).toFixed(1)}%</span>
+            </p>
+            <div>
+              <h2 className={css.overview_title}>overview</h2>
+              <p className={css.overview__box}>
+                {overview ? overview : 'No overview'}
+              </p>
+            </div>
+            <h3 className={css.genres}>Genres</h3>
+            <ul className={css.genres_list}>
+              <Genres items={genres} />
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

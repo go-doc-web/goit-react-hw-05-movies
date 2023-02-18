@@ -6,7 +6,7 @@ import MoviesPage from 'pages/MoviesPage';
 import NotFoundPage from 'pages/NotFoundPage';
 import SingleMoviePage from 'pages/SingleMoviePage/SingleMoviePage';
 
-export const App = () => {
+const App = () => {
   return (
     <BrowserRouter>
       <NavBar />
@@ -19,3 +19,5 @@ export const App = () => {
     </BrowserRouter>
   );
 };
+
+export default App;
