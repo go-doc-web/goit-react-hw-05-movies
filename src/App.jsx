@@ -11,7 +11,8 @@ const App = () => {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path={'/'} element={<HomePage />} />
+        <Route path={'/goit-react-hw-05-movies'} element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/movies/:id" element={<SingleMoviePage />} />
         <Route path="*" element={<NotFoundPage />} />
