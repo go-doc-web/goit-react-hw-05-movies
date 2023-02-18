@@ -1,5 +1,5 @@
 .menu {
-  padding: 16px 15px;
+  padding: 16px 30px;
   background-color: beige;
   -webkit-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.75);
@@ -27,6 +27,7 @@
 .menu_link:focus {
   color: teal;
 }
+
 .menu_link:global(.active) {
   color: red;
 }

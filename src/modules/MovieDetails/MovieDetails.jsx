@@ -47,8 +47,8 @@ const MovieDetails = () => {
             <img
               src={poster_path ? baseImageUrl + poster_path : imagePlaceholder}
               alt={title}
-              width={342}
-              height={487}
+              width={242}
+              height={387}
             />
           </div>
           <div>
