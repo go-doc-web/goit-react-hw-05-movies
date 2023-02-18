@@ -1,5 +1,7 @@
+import TrendMovies from 'modules/TrendMovie/TrendMovies';
+
 const HomePage = () => {
-  return <h1>HomePage</h1>;
+  return <TrendMovies />;
 };
 
 export default HomePage;
