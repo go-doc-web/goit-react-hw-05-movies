@@ -1,0 +1,20 @@
+.trend_list {
+   display: inline-flex;
+   flex-direction: column;
+   gap: 6px;
+
+
+}
+
+.trend_link {
+   text-transform: uppercase;
+   text-decoration: none;
+   font-size: 14px;
+   font-weight: 500;
+   color: #000;
+   transition: color 250ms liener;
+}
+
+.trend_link:hover {
+   color: blue;
+}
