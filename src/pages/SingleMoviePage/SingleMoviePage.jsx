@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 import MovieDetails from '../../modules/MovieDetails/MovieDetails';
 
@@ -11,7 +12,7 @@ const SingleMoviePage = () => {
   return (
     <>
       <button onClick={goBack} className={css.btn}>
-        Go Back
+        <FaArrowLeft />
       </button>
       <MovieDetails />
     </>

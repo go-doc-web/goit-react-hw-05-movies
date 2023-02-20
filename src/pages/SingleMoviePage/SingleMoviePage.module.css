@@ -1,7 +1,14 @@
 .btn {
-   font-family: inherit;
-   margin-top: 4px;
-   margin-bottom: 4px;
-   margin-left: 30px;
+  width: 40px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 30px;
+  background-color: inherit;
 
+  cursor: pointer;
 }

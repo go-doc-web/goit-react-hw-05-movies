@@ -21,3 +21,12 @@ export const getMoviesById = async id => {
   console.log(data);
   return data;
 };
+
+export const getSearchPosts = async query => {
+  const { data } = await api.get(`/search/movie`, {
+    params: {
+      query,
+    },
+  });
+  return data;
+};

@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.input_search {
+  width: 300px;
+  height: 26px;
+  padding: 2px 6px;
+}
+
+.submit_btn {
+  height: 26px;
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.submit_btn:hover {
+  background-color: rgb(225, 220, 220);
+}

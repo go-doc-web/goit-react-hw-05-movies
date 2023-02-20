@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Genres from './Genres/Genres';
+import { Spinner } from 'shared/utilis/Spinner/DnaSpinner';
 
 import { getMoviesById } from '../../shared/servises/movie-api';
 
@@ -39,38 +40,42 @@ const MovieDetails = () => {
 
   return (
     <>
-      {loading && <p>Loading...</p>}
+      {loading && <Spinner />}
       {error && <p>{error}</p>}
-      <section className={css.section}>
-        <div className={css.wrapper}>
-          <div className={css.thumb}>
-            <img
-              src={poster_path ? baseImageUrl + poster_path : imagePlaceholder}
-              alt={title}
-              width={242}
-              height={387}
-            />
-          </div>
-          <div>
-            <h1 className={css.title}>
-              {title ? title : 'No Title'} <span>({year})</span>
-            </h1>
-            <p className={css.score}>
-              User Score: <span>{(vote_average * 10).toFixed(1)}%</span>
-            </p>
-            <div>
-              <h2 className={css.overview_title}>overview</h2>
-              <p className={css.overview__box}>
-                {overview ? overview : 'No overview'}
-              </p>
+      {items && (
+        <section className={css.section}>
+          <div className={css.wrapper}>
+            <div className={css.thumb}>
+              <img
+                src={
+                  poster_path ? baseImageUrl + poster_path : imagePlaceholder
+                }
+                alt={title}
+                width={242}
+                height={387}
+              />
             </div>
-            <h3 className={css.genres}>Genres</h3>
-            <ul className={css.genres_list}>
-              <Genres items={genres} />
-            </ul>
+            <div>
+              <h1 className={css.title}>
+                {title ? title : 'No Title'} <span>({year})</span>
+              </h1>
+              <p className={css.score}>
+                User Score: <span>{(vote_average * 10).toFixed(1)}%</span>
+              </p>
+              <div>
+                <h2 className={css.overview_title}>overview</h2>
+                <p className={css.overview__box}>
+                  {overview ? overview : 'No overview'}
+                </p>
+              </div>
+              <h3 className={css.genres}>Genres</h3>
+              <ul className={css.genres_list}>
+                {genres.length > 0 && <Genres items={genres} />}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 };

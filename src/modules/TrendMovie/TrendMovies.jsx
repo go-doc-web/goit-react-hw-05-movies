@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
 import { getTrendMoviesToday } from '../../shared/servises/movie-api';
-import TrendMoviesList from './TrendMoviesList/TrendMoviesList';
+import MoviesList from './TrendMoviesList/MoviesList';
+
+import { Spinner } from 'shared/utilis/Spinner/DnaSpinner';
 
 const TrendMovies = () => {
   const [items, setItems] = useState([]);
@@ -25,9 +27,9 @@ const TrendMovies = () => {
   }, [setItems, setLoading, setError]);
   return (
     <>
-      {loading && <p>Loading...</p>}
+      {loading && <Spinner />}
       {error && <p>{error}</p>}
-      <TrendMoviesList items={items} />
+      {items.length > 0 && <MoviesList items={items} />}
     </>
   );
 };
