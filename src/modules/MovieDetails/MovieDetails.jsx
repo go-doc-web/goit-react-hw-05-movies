@@ -21,7 +21,7 @@ const MovieDetails = () => {
       try {
         setLoading(true);
         const results = await getMoviesById(id);
-        setItems({ ...items, ...results });
+        setItems(prevItems => ({ ...prevItems, ...results }));
         setGenres([...results.genres]);
       } catch (error) {
         setError(error.message);
