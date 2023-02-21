@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import MovieSearchForm from 'modules/MovieSearchForm/MovieSearchForm';
 import { getSearchPosts } from 'shared/servises/movie-api';
 
@@ -8,13 +9,17 @@ import css from './MoviesSearshPage.module.css';
 
 const MoviesSearchPage = () => {
   const [items, setItems] = useState([]);
-  const [search, setSearch] = useState('');
+  // const [search, setSearch] = useState('');
   const [isBtnActive, setBtnActive] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const search = searchParams.get('search');
+
   const changeSerach = ({ search }) => {
-    setSearch(search);
+    // setSearch(search);
+    setSearchParams({ search });
   };
 
   useEffect(() => {
@@ -25,7 +30,6 @@ const MoviesSearchPage = () => {
         const { results } = await getSearchPosts(search);
         // console.log(results);
         setItems(results);
-        console.log(items);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -47,6 +51,7 @@ const MoviesSearchPage = () => {
           loading={loading}
         />
       </section>
+      {error && <p>Error</p>}
       <section>{items.length > 0 && <MoviesList items={items} />}</section>
     </main>
   );

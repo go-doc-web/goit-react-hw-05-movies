@@ -24,3 +24,7 @@
 .submit_btn:hover {
   background-color: rgb(225, 220, 220);
 }
+
+.loading {
+  height: 30px;
+}

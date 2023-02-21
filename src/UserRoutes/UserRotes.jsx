@@ -9,7 +9,7 @@ const UserRoutes = () => {
   return (
     <Routes>
       <Route path={'/'} element={<HomePage />} />
-      <Route path={'/goit-react-hw-05-movies'} element={<HomePage />} />
+
       <Route path="/movies" element={<MoviesSearchPage />} />
       <Route path="/movies/:id" element={<SingleMoviePage />} />
       <Route path="*" element={<NotFoundPage />} />
