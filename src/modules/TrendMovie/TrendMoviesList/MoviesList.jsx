@@ -1,12 +1,19 @@
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import css from './MoviesList.module.css';
 
 const MoviesList = ({ items }) => {
+  const location = useLocation();
+
   const elements = items.map(({ id, title }) => (
-    <Link className={css.trend_link} key={id} to={`/movies/${id}`}>
+    <Link
+      state={{ from: location }}
+      className={css.trend_link}
+      key={id}
+      to={`/movies/${id}`}
+    >
       <li>{title}</li>
     </Link>
   ));

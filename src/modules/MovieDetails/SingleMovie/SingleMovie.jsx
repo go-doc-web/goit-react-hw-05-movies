@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Genres from '../Genres/Genres';
 
 import css from './SingleMovie.module.css';
@@ -9,7 +11,6 @@ const baseImageUrl = 'https://image.tmdb.org/t/p/w342';
 // const imagePlaceholder = 'https://via.placeholder.com/342x487 ';
 
 const SingleMovie = ({ items, genres }) => {
-  console.log(items);
   const { poster_path, title, vote_average, overview, release_date } = items;
   const year = release_date ? release_date.substr(0, 4) : '';
   return (
@@ -51,3 +52,16 @@ const SingleMovie = ({ items, genres }) => {
 };
 
 export default SingleMovie;
+SingleMovie.defaultProps = {
+  genres: [],
+};
+
+SingleMovie.propTypes = {
+  items: PropTypes.shape({
+    poster_path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+  }),
+  genres: PropTypes.array,
+};

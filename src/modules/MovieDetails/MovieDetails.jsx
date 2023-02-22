@@ -14,6 +14,7 @@ const MovieDetails = () => {
   const [loading, setLoading] = useState(false);
   const [genres, setGenres] = useState([]);
   const [error, setError] = useState(null);
+
   const { id } = useParams();
 
   useEffect(() => {

@@ -18,7 +18,7 @@ export const getTrendMoviesToday = async () => {
 
 export const getMoviesById = async id => {
   const { data } = await api.get(`/movie/${id}`);
-  console.log(data);
+
   return data;
 };
 
@@ -28,5 +28,17 @@ export const getSearchPosts = async query => {
       query,
     },
   });
+  return data;
+};
+
+export const getCastById = async id => {
+  const { data } = await api.get(`/movie/${id}/credits`);
+
+  return data;
+};
+
+export const getReviewsById = async id => {
+  const { data } = await api.get(`/movie/${id}/reviews`);
+  console.log(data);
   return data;
 };
